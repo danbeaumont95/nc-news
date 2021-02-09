@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import * as api from '../api';
 import { Link } from '@reach/router'
+import ErrorDisplayer from './ErrorDisplayer';
 
 
 class ArticleList extends Component {
 
     state={
         articles: [],
-        isLoading: true
+        isLoading: true,
+        errMessage: ''
     }
 
     componentDidMount() {
@@ -15,8 +17,9 @@ class ArticleList extends Component {
     }
 
     render() {
-        const { articles } = this.state;
+        const { articles, errMessage } = this.state;
         if (this.state.isLoading) return <p>Loading....</p>
+        if (errMessage) return <ErrorDisplayer msg={errMessage}/>
         return (
             <div className="article-list">
                 {articles.map((article) => {
@@ -42,6 +45,8 @@ class ArticleList extends Component {
         api.getAllArticles().then((articles) => {
             this.setState({ articles, isLoading: false })
         })
+     
+     
     }
 
 }

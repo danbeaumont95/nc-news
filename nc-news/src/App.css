@@ -18,3 +18,12 @@
 li {
   border: 4px solid pink;
 }
+
+.navbar {
+  display: flex;
+  
+}
+
+.nav-list {
+  list-style-type: none;
+}
