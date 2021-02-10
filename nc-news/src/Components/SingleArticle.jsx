@@ -1,29 +1,51 @@
 import React, { Component } from 'react';
 import * as api from '../api'
+
 import ErrorDisplayer from './ErrorDisplayer';
+import VoteUpdater from './VoteUpdater';
+// import { FaThumbsUp } from 'react-icons/fa';
+// import { FaThumbsDown } from 'react-icons/fa';
+
 
 
 class SingleArticle extends Component {
 state={
     article: {},
     isLoading: true,
-    errMessage: ''
+    errMessage: '',
+  
+    voted: false
 }
 
 componentDidMount() {
     const { article_id } = this.props;
     this.fetchArticle(article_id)
+    // this.setState({
+    //     votes: this.props.votes
+    // })
 }
 
+
+
 render() {
-    const { article, errMessage } = this.state
+    const { article, errMessage, voted } = this.state
+    const { votes, article_id } = article
+    console.log(article.votes, 'just in render')
     if (errMessage) return <ErrorDisplayer msg={errMessage}/>
     return (
         <div>
-          <h3>{article.body}</h3>
+            
+          <h5>{article.body}</h5>
+          <VoteUpdater votes={votes} article_id={article_id}/>
+      
+         <h5>Comments</h5>
         </div>
     )
+    
 }
+
+
+
 
 fetchArticle(article_id) {
 api.getArticle(article_id).then((article) => {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as api from '../api';
 import { Link } from '@reach/router'
 import ErrorDisplayer from './ErrorDisplayer';
+import SingleArticle from './SingleArticle'
 
 
 class ArticleList extends Component {
@@ -28,6 +29,7 @@ class ArticleList extends Component {
                             <Link to={`/articles/${article.article_id}`}>
                        <h4>{article.title}</h4> 
                        {/* <SingleArticle singleArticleData key={article.article_id} {...article}/> */}
+                       
                        </Link>
                        <p>Votes: {article.votes}</p>
                        <p>Comments: {article.comment_count}</p>

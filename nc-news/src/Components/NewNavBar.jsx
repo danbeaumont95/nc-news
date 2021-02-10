@@ -24,9 +24,9 @@ const NewNavBar = () => {
       </ReactBootStrap.NavDropdown>
     </ReactBootStrap.Nav>
     <ReactBootStrap.Nav>
-      <ReactBootStrap.Nav.Link href="#deets">More deets</ReactBootStrap.Nav.Link>
+      <ReactBootStrap.Nav.Link href="#deets">Comments</ReactBootStrap.Nav.Link>
       <ReactBootStrap.Nav.Link eventKey={2} href="#memes">
-        Dank memes
+        Contact me!
       </ReactBootStrap.Nav.Link>
     </ReactBootStrap.Nav>
   </ReactBootStrap.Navbar.Collapse>
