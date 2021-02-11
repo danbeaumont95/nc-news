@@ -3,6 +3,7 @@ import * as api from '../api'
 import Comments from './Comments';
 
 import ErrorDisplayer from './ErrorDisplayer';
+import PostComment from './PostComment';
 import VoteUpdater from './VoteUpdater';
 // import { FaThumbsUp } from 'react-icons/fa';
 // import { FaThumbsDown } from 'react-icons/fa';
@@ -26,7 +27,13 @@ componentDidMount() {
     // })
 }
 
-
+addNewComment = (newComment) => {
+    this.setState((currentState) => {
+        return {
+            article: {newComment, ...currentState.article}
+        }
+    })
+}
 
 render() {
     const { article, errMessage, voted, isLoading } = this.state
@@ -36,12 +43,14 @@ render() {
     if (errMessage) return <ErrorDisplayer msg={errMessage}/>
     console.log(article_id, 'in single article')
     return (
+        
         <div>
             
           <h5>{article.body}</h5>
           <VoteUpdater votes={votes} article_id={article_id}/>
         <Comments article_id={article_id} />
          {/* <h5>Comments</h5> */}
+         <PostComment addNewComment={this.addNewComment} article_id={article_id}/>
         </div>
     )
     

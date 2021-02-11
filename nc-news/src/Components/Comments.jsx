@@ -29,8 +29,7 @@ class Comments extends Component {
         if(isLoading) return <p>loading</p>
         return (
             <div>
-                {/* <h5>{article_id}</h5> */}
-                {/* <h5>Comments:{comments.article.body}</h5> */}
+                
                 {console.log(comments, 'in render of comments')}
                 <h5>Comments:</h5>
                 {comments.map((comment) => {

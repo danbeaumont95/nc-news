@@ -35,3 +35,13 @@ export const getComments = (article_id) => {
         return response.data.article
     })
 }
+
+export const postComments = (article_id, {body}) => {
+    return axios.post(`${base_url}articles/${article_id}/comments`, {
+        body: body
+    })
+    .then((response) => {
+        console.log(response)
+        return response.data;
+    })
+}
