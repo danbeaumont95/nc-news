@@ -45,3 +45,11 @@ export const postComments = (article_id, {body}) => {
         return response.data;
     })
 }
+
+export const getTopics = () => {
+    return axios.get(`${base_url}topics`)
+    .then((response) => {
+        console.log(response, 'in get topics api')
+        return response.data.topics;
+    })
+}

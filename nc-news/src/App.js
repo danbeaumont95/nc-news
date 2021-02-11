@@ -8,6 +8,7 @@ import SingleArticle from './Components/SingleArticle';
 // import * as ReactBootStrap from 'react-bootstrap'
 import NewNavBar from './Components/NewNavBar'
 import ErrorDisplayer from './Components/ErrorDisplayer'
+import TopicsList from './Components/TopicsList';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       <Router>
         <ArticleList path="/"/>
         <SingleArticle path="/articles/:article_id"/>
-        
+        <TopicsList path="/topics"/>
         <ErrorDisplayer default/>
       </Router>
     </div>
