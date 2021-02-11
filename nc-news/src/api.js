@@ -12,7 +12,7 @@ export const getAllArticles = () => {
 export const getArticle = (article_id) => {
     return axios.get(`https://nc-news-api-site.herokuapp.com/api/articles/${article_id}`)
     .then((response) => {
-        console.log(response.data.article, 'getArticle API')
+        // console.log(response.data.article, 'getArticle API')
         return response.data.article;
     })
 }
@@ -28,3 +28,10 @@ export const patchArticleVotes = (article_id, voteChange) => {
    
 }
 
+export const getComments = (article_id) => {
+    return axios.get(`${base_url}articles/${article_id}/comments`)
+    .then((response) => {
+        console.log(response.data.article.body, 'In get comments API func')
+        return response.data
+    })
+}

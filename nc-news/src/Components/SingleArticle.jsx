@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../api'
+import Comments from './Comments';
 
 import ErrorDisplayer from './ErrorDisplayer';
 import VoteUpdater from './VoteUpdater';
@@ -28,24 +29,23 @@ componentDidMount() {
 
 
 render() {
-    const { article, errMessage, voted } = this.state
+    const { article, errMessage, voted, isLoading } = this.state
     const { votes, article_id } = article
-    console.log(article.votes, 'just in render')
+    // console.log(article.votes, 'just in render')
+    if (isLoading) return <p>Loading...</p>
     if (errMessage) return <ErrorDisplayer msg={errMessage}/>
+    console.log(article_id, 'in single article')
     return (
         <div>
             
           <h5>{article.body}</h5>
           <VoteUpdater votes={votes} article_id={article_id}/>
-      
-         <h5>Comments</h5>
+        <Comments article_id={article_id} />
+         {/* <h5>Comments</h5> */}
         </div>
     )
     
 }
-
-
-
 
 fetchArticle(article_id) {
 api.getArticle(article_id).then((article) => {

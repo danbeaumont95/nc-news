@@ -22,6 +22,7 @@ function App() {
       <Router>
         <ArticleList path="/"/>
         <SingleArticle path="/articles/:article_id"/>
+        
         <ErrorDisplayer default/>
       </Router>
     </div>
