@@ -31,7 +31,7 @@ export const patchArticleVotes = (article_id, voteChange) => {
 export const getComments = (article_id) => {
     return axios.get(`${base_url}articles/${article_id}/comments`)
     .then((response) => {
-        console.log(response.data.article.body, 'In get comments API func')
-        return response.data
+        console.log(response.data.article, 'In get comments API func')
+        return response.data.article
     })
 }

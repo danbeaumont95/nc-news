@@ -30,8 +30,16 @@ class Comments extends Component {
         return (
             <div>
                 {/* <h5>{article_id}</h5> */}
-                <h5>Comments:{comments.article.body}</h5>
-                {console.log(comments.article.body, 'in render of comments')}
+                {/* <h5>Comments:{comments.article.body}</h5> */}
+                {console.log(comments, 'in render of comments')}
+                <h5>Comments:</h5>
+                {comments.map((comment) => {
+                    return (
+                        <li key={comment.comment_id}>
+                            <h4>{comment.body}</h4>
+                        </li>
+                    )
+                })}
             </div>
         )
     }
