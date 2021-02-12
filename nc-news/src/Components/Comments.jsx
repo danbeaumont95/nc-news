@@ -35,7 +35,8 @@ class Comments extends Component {
                 {comments.map((comment) => {
                     return (
                         <li key={comment.comment_id}>
-                            <h4>{comment.body}</h4>
+                            <h6>{comment.body}</h6>
+                            <p>Votes: {comment.votes}</p>
                         </li>
                     )
                 })}

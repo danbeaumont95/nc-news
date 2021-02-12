@@ -31,7 +31,7 @@ class TopicsByQuery extends Component {
                         <li>
                             <h4>{topic.title}</h4>
                      
-                     <p>{topic.body}</p>
+                     <h6>{topic.body}</h6>
                      <p>{topic.author}</p>
                      <p>Votes: {topic.votes}</p>
                      <Link to={`/articles/${topic.article_id}`}>
