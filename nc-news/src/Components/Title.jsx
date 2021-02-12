@@ -1,9 +1,15 @@
 import React from 'react';
 
-const Title = () => {
+const Title = ({ username, logout }) => {
     return (
         <header className="title">
             <h1>Welcome to NC-News</h1>
+        {username && (
+            <>
+            <p>Loggin in as {username}</p>
+            <button onClick={logout}>Logout</button>
+            </>
+        )}
         </header>
     )
 }

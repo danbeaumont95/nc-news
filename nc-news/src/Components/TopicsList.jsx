@@ -21,6 +21,7 @@ class TopicsList extends Component {
         if (errMessage) return <ErrorDisplayer msg={errMessage}/>
         return (
             <div>
+                <h4>Please see all the topics below, and click on a topic to view all articles relating to that topic</h4>
                 {/* <TopicsByQuery /> */}
                 {console.log(topics, 'in render of topics list')}
                 {topics.map((topic) => {

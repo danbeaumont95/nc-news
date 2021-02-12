@@ -10,17 +10,23 @@ import NewNavBar from './Components/NewNavBar'
 import ErrorDisplayer from './Components/ErrorDisplayer'
 import TopicsList from './Components/TopicsList';
 import TopicsByQuery from './Components/TopicsByQuery';
+import { Component } from 'react';
 
-function App() {
+class App extends Component {
+state={
+  username: 'jessjelly'
+}
+
+render() {
   return (
     <div className="App">
 
 
     <NewNavBar />
       {/* <NavBar /> */}
-      <Title />
-      <Intro />
       
+      <Intro />
+      <Title username={this.state.username} logout={this.logout}/>
       <Router>
         <ArticleList path="/"/>
         <SingleArticle path="/articles/:article_id"/>
@@ -30,6 +36,12 @@ function App() {
       </Router>
     </div>
   );
+}
+
+logout = () => {
+  this.setState({ username: null})
+}
+
 }
 
 export default App;

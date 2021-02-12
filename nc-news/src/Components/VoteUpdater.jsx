@@ -16,6 +16,7 @@ const {voteChange} = this.state;
 return (
     <div>
         <button onClick={() => {this.handleClick(1)}}>Up</button>
+        <br/>
         <p>Votes: {votes + voteChange}</p>
         <button onClick={() => {this.handleClick(-1)}}>Down</button>
     </div>

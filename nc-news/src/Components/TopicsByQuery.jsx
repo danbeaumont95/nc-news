@@ -17,12 +17,13 @@ class TopicsByQuery extends Component {
 
     render() {
         const { topics, errMessage } = this.state;
+        
         if (this.state.isLoading) return <p>Loading...</p>
         if (errMessage) return <ErrorDisplayer msg={errMessage}/>
         return (
             <div>
                 <Link to="/topics">
-                <p>Return to Topics List</p>
+                <h4>Return to Topics List</h4>
                 </Link>
                 {topics.map((topic) => {
                     
@@ -33,6 +34,10 @@ class TopicsByQuery extends Component {
                      <p>{topic.body}</p>
                      <p>{topic.author}</p>
                      <p>Votes: {topic.votes}</p>
+                     <Link to={`/articles/${topic.article_id}`}>
+                     
+                     <p>Comments: {topic.comment_count}</p>
+                     </Link>
                         </li>
                     )
                 })}

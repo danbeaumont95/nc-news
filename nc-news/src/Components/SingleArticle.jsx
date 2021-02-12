@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../api'
 import Comments from './Comments';
-
+import { Link } from '@reach/router'
 import ErrorDisplayer from './ErrorDisplayer';
 import PostComment from './PostComment';
 import VoteUpdater from './VoteUpdater';
@@ -45,7 +45,9 @@ render() {
     return (
         
         <div>
-            
+            <Link to="/">
+            <h4>Return to all Articles</h4>
+            </Link>
           <h5>{article.body}</h5>
           <VoteUpdater votes={votes} article_id={article_id}/>
         <Comments article_id={article_id} />
