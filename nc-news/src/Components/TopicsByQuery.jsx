@@ -32,6 +32,7 @@ class TopicsByQuery extends Component {
                      
                      <p>{topic.body}</p>
                      <p>{topic.author}</p>
+                     <p>Votes: {topic.votes}</p>
                         </li>
                     )
                 })}
