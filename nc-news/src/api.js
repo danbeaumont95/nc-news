@@ -53,3 +53,11 @@ export const getTopics = () => {
         return response.data.topics;
     })
 }
+
+export const getTopicsByTopic = (topic) => {
+    return axios.get(`${base_url}topics/${topic}/articles`)
+    .then((response) => {
+        console.log(response.data.articles, 'in get topicsbytopic api')
+        return response.data.articles
+    })
+}

@@ -1,6 +1,8 @@
+import { Link } from '@reach/router';
 import React, { Component } from 'react';
 import * as api from '../api'
 import ErrorDisplayer from './ErrorDisplayer';
+import TopicsByQuery from './TopicsByQuery';
 
 class TopicsList extends Component {
     state={
@@ -19,12 +21,15 @@ class TopicsList extends Component {
         if (errMessage) return <ErrorDisplayer msg={errMessage}/>
         return (
             <div>
+                {/* <TopicsByQuery /> */}
                 {console.log(topics, 'in render of topics list')}
                 {topics.map((topic) => {
                     return (
                         <li key={topic.slug}>
+                            <Link to={`/topics/${topic.slug}`}>
                             <h4>{topic.slug}</h4>
                             
+                            </Link>
                         </li>
                     )
                 })}

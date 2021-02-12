@@ -9,6 +9,7 @@ import SingleArticle from './Components/SingleArticle';
 import NewNavBar from './Components/NewNavBar'
 import ErrorDisplayer from './Components/ErrorDisplayer'
 import TopicsList from './Components/TopicsList';
+import TopicsByQuery from './Components/TopicsByQuery';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <ArticleList path="/"/>
         <SingleArticle path="/articles/:article_id"/>
         <TopicsList path="/topics"/>
+        <TopicsByQuery path="/topics/:topic" />
         <ErrorDisplayer default/>
       </Router>
     </div>

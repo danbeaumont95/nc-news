@@ -14,7 +14,10 @@ const NewNavBar = () => {
         <Link to="/">
       <ReactBootStrap.Nav.Link href="#features">Articles</ReactBootStrap.Nav.Link>
       </Link>
+      <Link to="/topics">
+      
       <ReactBootStrap.Nav.Link href="#pricing">Topics</ReactBootStrap.Nav.Link>
+      </Link>
       <ReactBootStrap.NavDropdown title="Dropdown" id="collasible-nav-dropdown">
         <ReactBootStrap.NavDropdown.Item href="#action/3.1">Action</ReactBootStrap.NavDropdown.Item>
         <ReactBootStrap.NavDropdown.Item href="#action/3.2">Another action</ReactBootStrap.NavDropdown.Item>
