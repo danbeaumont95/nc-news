@@ -28,6 +28,10 @@ class PostComment extends Component {
         })
     }
 
+    buttonClick = () => {
+        alert('Submitted comment, please refresh page to view comment')
+    }
+
     render() {
        return (
         <div>
@@ -35,7 +39,7 @@ class PostComment extends Component {
                 <label>New comment!
                     <input type="text" onChange={this.handleInputChange} value={this.state.type} name="body"/>
                 </label>
-                <button>Post new Comment!</button>
+                <button onClick={this.buttonClick}>Post new Comment!</button>
             </form>
         </div>
     ) 
