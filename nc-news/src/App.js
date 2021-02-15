@@ -26,7 +26,7 @@ render() {
       {/* <NavBar /> */}
       
       <Intro />
-      <Title username={this.state.username} logout={this.logout}/>
+      <Title username={this.state.username} logout={this.logout} login={this.login}/>
       <Router>
         <ArticleList path="/"/>
         <SingleArticle path="/articles/:article_id"/>
@@ -40,6 +40,11 @@ render() {
 
 logout = () => {
   this.setState({ username: null})
+}
+
+login = () => {
+  // const { username } = this.state.username
+  this.setState({ username: 'jessjelly' })
 }
 
 }

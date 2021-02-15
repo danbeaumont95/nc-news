@@ -61,3 +61,10 @@ export const getTopicsByTopic = (topic) => {
         return response.data.articles
     })
 }
+
+export const patchCommentsVotes = (comment_id, voteChange) => {
+    console.log(voteChange, 'in patchCommentsVotes API')
+    return axios.patch(`${base_url}comments/${comment_id}`, {
+        inc_votes: voteChange
+    })
+}

@@ -6,18 +6,19 @@
 }
 
 .title {
-  border: 4px solid blue;
+  /* border: 4px solid blue; */
 }
 
 .intro {
-  border: 4px solid red;
+  /* border: 4px solid red; */
 }
 
 .article-list {
-  border: 4px solid green;
+  /* border: 4px solid green; */
 }
 li {
-  border-bottom: 4px solid pink;
+  /* border: 4px solid black; */
+  padding: 4px;
 }
 
 .navbar {
@@ -27,4 +28,13 @@ li {
 
 .nav-list {
   list-style-type: none;
+}
+
+.article-list-items {
+  border-bottom: 4px solid rgb(98, 151, 133);
+  
+  
+}
+h4 {
+  color: black;
 }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import * as api from '../api'
+import CommentVoteUpdater from './CommentVoteUpdater';
+import VoteUpdater from './VoteUpdater';
 
 class Comments extends Component {
     state={
@@ -12,19 +14,21 @@ class Comments extends Component {
         const { article_id } = this.props;
         console.log(article_id, 'in component did mount')
         this.fetchComments(article_id)
-     
+        // this.setState({
+        //     votes: this.comments.votes
+        // })
     }
 
-    componentDidUpdate(prevProps) {
-        const { article_id } = this.props;
-        if (article_id !== prevProps.article_id) {
-            this.fetchComments(article_id)
-        }
-    }
+    // componentDidUpdate(prevProps) {
+    //     const { article_id } = this.props;
+    //     if (article_id !== prevProps.article_id) {
+    //         this.fetchComments(article_id)
+    //     }
+    // }
 
     render() {
         const { comments, errMessage, isLoading } = this.state;
-         const { article_id } = comments
+         const { comment_id, votes } = comments
         if (errMessage) return <p>Erorrrrrrr</p>
         if(isLoading) return <p>loading</p>
         return (
@@ -33,10 +37,14 @@ class Comments extends Component {
                 {console.log(comments, 'in render of comments')}
                 <h5>Comments:</h5>
                 {comments.map((comment) => {
+                    console.log(comment.votes, 'votes in list of render comments')
+                    console.log(comment.comment_id, 'comment_id in list of render comments')
                     return (
                         <li key={comment.comment_id}>
                             <h6>{comment.body}</h6>
-                            <p>Votes: {comment.votes}</p>
+                            {/* <p>Votes: {comment.votes}</p> */}
+                            {/* <VoteUpdater article_id={comment.comment_id} votes={comment.votes}/> */}
+                            <CommentVoteUpdater votes={comment.votes} comment_id={comment.comment_id} />
                         </li>
                     )
                 })}

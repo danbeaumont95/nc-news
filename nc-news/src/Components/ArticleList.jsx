@@ -25,7 +25,7 @@ class ArticleList extends Component {
             <div className="article-list">
                 {articles.map((article) => {
                     return (
-                        <li key={article.article_id}>
+                        <li key={article.article_id} className="article-list-items">
                             <Link to={`/articles/${article.article_id}`}>
                        <h4>{article.title}</h4> 
                        {/* <SingleArticle singleArticleData key={article.article_id} {...article}/> */}
