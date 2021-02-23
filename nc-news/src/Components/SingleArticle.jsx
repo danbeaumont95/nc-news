@@ -44,7 +44,7 @@ render() {
     console.log(article_id, 'in single article')
     return (
         
-        <div>
+        <div >
             <Link to="/">
             <h4>Return to all Articles</h4>
             </Link>

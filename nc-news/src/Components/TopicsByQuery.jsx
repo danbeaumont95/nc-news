@@ -20,15 +20,17 @@ class TopicsByQuery extends Component {
         
         if (this.state.isLoading) return <p>Loading...</p>
         if (errMessage) return <ErrorDisplayer msg={errMessage}/>
-        return (
-            <div>
+        return ( 
+        <>
+        <h4>Return to Topics List</h4>
+            <div className="article-list">
                 <Link to="/topics">
-                <h4>Return to Topics List</h4>
+               
                 </Link>
                 {topics.map((topic) => {
                     
                     return (
-                        <li>
+                        <li className="article-list-items">
                             <h4>{topic.title}</h4>
                      
                      <h6>{topic.body}</h6>
@@ -42,6 +44,7 @@ class TopicsByQuery extends Component {
                     )
                 })}
             </div>
+            </>
         )
     }
 

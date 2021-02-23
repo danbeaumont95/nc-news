@@ -32,15 +32,18 @@ class Comments extends Component {
         if (errMessage) return <p>Erorrrrrrr</p>
         if(isLoading) return <p>loading</p>
         return (
-            <div>
+            <>
+        <h5 className="comments-title">Comments:</h5>
+        
+            <div className="article-list">
                 
                 {console.log(comments, 'in render of comments')}
-                <h5>Comments:</h5>
+                
                 {comments.map((comment) => {
                     console.log(comment.votes, 'votes in list of render comments')
                     console.log(comment.comment_id, 'comment_id in list of render comments')
                     return (
-                        <li key={comment.comment_id}>
+                        <li key={comment.comment_id} className="article-list-items">
                             <h6>{comment.body}</h6>
                             {/* <p>Votes: {comment.votes}</p> */}
                             {/* <VoteUpdater article_id={comment.comment_id} votes={comment.votes}/> */}
@@ -49,6 +52,7 @@ class Comments extends Component {
                     )
                 })}
             </div>
+            </>
         )
     }
 
