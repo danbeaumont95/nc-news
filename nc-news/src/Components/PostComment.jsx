@@ -10,7 +10,6 @@ class PostComment extends Component {
     handleSubmit = (event) => {
         const { article_id } = this.props;
         event.preventDefault()
-        console.log('Submitting form')
         api.postComments(article_id, this.state).then(({comment}) => {
             this.props.addNewComment(comment)
         })
@@ -21,7 +20,6 @@ class PostComment extends Component {
 
     handleInputChange = (event) => {
         const{value, name} = event.target;
-        console.log('Changing input', value, name)
         this.setState({
             [name]: value,
             isLoading: false

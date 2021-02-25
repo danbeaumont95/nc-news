@@ -20,11 +20,7 @@ state={
 render() {
   return (
     <div className="App">
-
-
     <NewNavBar />
-      {/* <NavBar /> */}
-      
       <Intro />
       <Title username={this.state.username} logout={this.logout} login={this.login}/>
       <Router>
@@ -43,7 +39,6 @@ logout = () => {
 }
 
 login = () => {
-  // const { username } = this.state.username
   this.setState({ username: 'jessjelly' })
 }
 

@@ -21,7 +21,6 @@ class CommentVoteUpdater extends Component {
 
     handleClick = (voteDifference) => {
         const { comment_id } = this.props;
-        console.log(comment_id, 'in handle click of CVC')
         this.setState((currentState) => {
             return {voteChange: currentState.voteChange + voteDifference}
         })

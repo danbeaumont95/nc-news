@@ -21,23 +21,19 @@ class TopicsByQuery extends Component {
         if (this.state.isLoading) return <p>Loading...</p>
         if (errMessage) return <ErrorDisplayer msg={errMessage}/>
         return ( 
-        <>
+        <> 
+        <Link to="/topics">
         <h4>Return to Topics List</h4>
+        </Link>
             <div className="article-list">
-                <Link to="/topics">
-               
-                </Link>
                 {topics.map((topic) => {
-                    
                     return (
                         <li className="article-list-items">
                             <h4>{topic.title}</h4>
-                     
                      <h6>{topic.body}</h6>
                      <p>{topic.author}</p>
                      <p>Votes: {topic.votes}</p>
                      <Link to={`/articles/${topic.article_id}`}>
-                     
                      <p>Comments: {topic.comment_count}</p>
                      </Link>
                         </li>

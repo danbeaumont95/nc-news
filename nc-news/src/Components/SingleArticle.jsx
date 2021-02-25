@@ -5,26 +5,18 @@ import { Link } from '@reach/router'
 import ErrorDisplayer from './ErrorDisplayer';
 import PostComment from './PostComment';
 import VoteUpdater from './VoteUpdater';
-// import { FaThumbsUp } from 'react-icons/fa';
-// import { FaThumbsDown } from 'react-icons/fa';
-
-
 
 class SingleArticle extends Component {
 state={
     article: {},
     isLoading: true,
     errMessage: '',
-  
     voted: false
 }
 
 componentDidMount() {
     const { article_id } = this.props;
     this.fetchArticle(article_id)
-    // this.setState({
-    //     votes: this.props.votes
-    // })
 }
 
 addNewComment = (newComment) => {
@@ -36,14 +28,11 @@ addNewComment = (newComment) => {
 }
 
 render() {
-    const { article, errMessage, voted, isLoading } = this.state
+    const { article, errMessage, isLoading } = this.state
     const { votes, article_id } = article
-    // console.log(article.votes, 'just in render')
     if (isLoading) return <p>Loading...</p>
     if (errMessage) return <ErrorDisplayer msg={errMessage}/>
-    console.log(article_id, 'in single article')
-    return (
-        
+    return (    
         <div >
             <Link to="/">
             <h4>Return to all Articles</h4>
@@ -51,7 +40,6 @@ render() {
           <h5>{article.body}</h5>
           <VoteUpdater votes={votes} article_id={article_id}/>
         <Comments article_id={article_id} />
-         {/* <h5>Comments</h5> */}
          <PostComment addNewComment={this.addNewComment} article_id={article_id}/>
         </div>
     )

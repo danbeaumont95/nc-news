@@ -12,7 +12,6 @@ render() {
 const {votes} = this.props
 const {voteChange} = this.state;
 
-
 return (
     <div>
         <button onClick={() => {this.handleClick(1)}}>Up</button>
@@ -27,10 +26,8 @@ handleClick = (voteDifference) => {
     this.setState((currentState) => {
         return {voteChange: currentState.voteChange + voteDifference}
     })
-    api.patchArticleVotes(article_id, voteDifference)
-    
+    api.patchArticleVotes(article_id, voteDifference) 
     .catch(console.log)
-    console.log(voteDifference)
 }
 
 }
