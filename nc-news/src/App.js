@@ -11,6 +11,7 @@ import ErrorDisplayer from './Components/ErrorDisplayer'
 import TopicsList from './Components/TopicsList';
 import TopicsByQuery from './Components/TopicsByQuery';
 import { Component } from 'react';
+import ContactMe from './Components/ContactMe';
 
 class App extends Component {
 state={
@@ -28,6 +29,7 @@ render() {
         <SingleArticle path="/articles/:article_id"/>
         <TopicsList path="/topics"/>
         <TopicsByQuery path="/topics/:topic" />
+        <ContactMe path="/contact"/>
         <ErrorDisplayer default/>
       </Router>
     </div>
